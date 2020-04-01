@@ -1,0 +1,172 @@
+/* ----------------------- ||  Customizing Scrollbar || ------------------- */
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: black;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #219dce;
+    height: 10px;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #1e7ba0;
+}
+
+/* ----------------------- ||  Global Attributes || ------------------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: medium;
+    background-color: rgba(17, 17, 17, 0.5);
+    color: #d4d4d4;
+    height: 200vh;
+    text-transform: uppercase;
+    background-image: url("../img/bg.jpg");
+    background-size: cover;
+
+}
+
+h2 {
+    font-weight: 500;
+}
+
+nav {
+    padding: 10px 12px;
+    background-color: transparent;
+    position: sticky;
+    top: 0;
+    z-index: 9;
+}
+
+ul {
+    margin-top: 5.2px;
+    list-style-type: none;
+    float: right;
+}
+
+li {
+    display: inline;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #d4d4d4;
+}
+
+
+/* ------------ for overlay ------------ */
+.overlay {
+    background-color: rgba(1, 46, 71, 0.5);
+}
+
+/* ----------------------- ||  Navbar Attributes || ------------------- */
+.nav-brand::before {
+    content: "My Site";
+    opacity: 1;
+    transition: opacity 0.4s;
+}
+
+.nav-brand:hover::before {
+    content: "";
+    opacity: 0;
+}
+
+.nav-brand {
+    float: left;
+}
+
+.nav-brand::after {
+    content: "";
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.nav-brand:hover::after {
+    content: "Go Home";
+    opacity: 1;
+    color: #4ecafc;
+}
+
+.nav-link {
+
+    margin-right: 2em;
+    display: inline-block;
+}
+
+.nav-link::after {
+    content: "";
+    position: relative;
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #4ecafc;
+    transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/*------------ Section --------------*/
+section {
+    width: 100%;
+    height: 100vh;
+    font-size: xx-large;
+    letter-spacing: 3px;
+    word-spacing: 5px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* ----------------------- ||  Media Queries || ------------------- */
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: small;
+    }
+
+    ul {
+        margin-top: 4.2px;
+    }
+
+    section {
+        font-size: large;
+    }
+
+    .nav {
+        padding: 10px 5px;
+
+    }
+
+    .nav-link {
+        margin-right: 1em;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    body {
+        font-size: x-small;
+    }
+
+    section {
+        font-size: large;
+    }
+}
